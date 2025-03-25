@@ -1,12 +1,16 @@
 class User < ApplicationRecord
-    GENDER ={
-        male:1,
-        female:2
+    GENDER = {
+      male: 1,
+      female: 2
     }
-    enum gender: GENDER
-    validate :gender ,inclusion :{in:{"male","female"},message:}
-    scope :male -> {where{gender:Male}}
-    scope :female -> {where{gender:Female}}
-
-
-end
+  
+    # Enum declaration to map gender to integer values
+    enum :gender,GENDER
+  
+    # Corrected validate syntax
+    validates :gender, inclusion: { in: ['male','female'], message: 'Invalid gender' }
+  
+   
+  
+  end
+  
