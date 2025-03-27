@@ -1,11 +1,16 @@
 <% content_for :title, "New user" %>
 
-<h1>New user</h1>
+<div class="user-form-container">
+  <div class="user-form-header">
+    <h1>Join Our Talent Network</h1>
+    <p>Create your account to start applying for exciting opportunities</p>
+  </div>
 
-<%= render "form", user: @user %>
+  <div class="form-card">
+    <%= render "form", user: @user %>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Back to users", users_path %>
+  <div class="form-footer">
+    <%= link_to "Back to users", users_path, class: "back-link" %>
+  </div>
 </div>

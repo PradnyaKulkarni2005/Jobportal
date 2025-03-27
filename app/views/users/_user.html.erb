@@ -1,27 +1,26 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>Name:</strong>
-    <%= user.name %>
+<div id="<%= dom_id user %>" class="user-details-card">
+  <p class="user-detail">
+    <strong class="user-label">Name:</strong>
+    <span class="user-value"><%= user.name %></span>
   </p>
 
-  <p>
-    <strong>Password:</strong>
-    <%= user.password %>
+  <p class="user-detail">
+    <strong class="user-label">Password:</strong>
+    <span class="user-value"><%= user.password %></span>
   </p>
 
-  <p>
-    <strong>Mobile number:</strong>
-    <%= user.mobile_number %>
+  <p class="user-detail">
+    <strong class="user-label">Mobile number:</strong>
+    <span class="user-value"><%= user.mobile_number %></span>
   </p>
 
-  <p>
-    <strong>Gender:</strong>
-    <%= user.gender %>
+  <p class="user-detail">
+    <strong class="user-label">Gender:</strong>
+    <span class="user-value"><%= user.gender %></span>
   </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
+  <p class="user-detail">
+    <strong class="user-label">Email:</strong>
+    <span class="user-value"><%= user.email %></span>
   </p>
-
 </div>

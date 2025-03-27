@@ -1,8 +1,7 @@
 <%= form_with(model: user) do |form| %>
   <% if user.errors.any? %>
-    <div style="color: red">
+    <div class="error-messages">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
         <% user.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,32 +10,41 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-input", placeholder: "Enter your full name" %>
   </div>
 
-  <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+  <div class="form-group">
+    <%= form.label :password, class: "form-label" %>
+    <%= form.password_field :password, class: "form-input", placeholder: "Create a password" %>
+    <small class="password-hint">Minimum 8 characters</small>
   </div>
 
-  <div>
-    <%= form.label :mobile_number, style: "display: block" %>
-    <%= form.text_field :mobile_number %>
+  <div class="form-group">
+    <%= form.label :mobile_number, class: "form-label" %>
+    <%= form.telephone_field :mobile_number, class: "form-input", placeholder: "Enter phone number" %>
   </div>
 
-  <div>
-    <%= form.label :gender, style: "display: block" %>
-    <%= form.text_field :gender %>
+  <div class="form-group">
+    <%= form.label :gender, class: "form-label" %>
+    <%= form.select :gender, 
+          options_for_select([
+            ['Male', 1],
+            ['Female', 2],
+            ['Other', 3],
+            ['Prefer not to say', 4]
+          ]), 
+          { include_blank: 'Select gender' }, 
+          class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="form-group">
+    <%= form.label :email, class: "form-label" %>
+    <%= form.email_field :email, class: "form-input", placeholder: "your@email.com" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-submit">
+    <%= form.submit "Create Account", class: "submit-button" %>
   </div>
 <% end %>
